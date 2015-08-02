@@ -18,6 +18,9 @@ version is 4.3.17.
   2. Clone the repository:
 
         git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+        
+        [fork]
+        git clone --recursive https://github.com/tomoya-k31/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
   3. Create a new Zsh configuration by copying the Zsh configuration files
      provided:
@@ -45,6 +48,12 @@ Updating
 Pull the latest changes and update submodules.
 
     git pull && git submodule update --init --recursive
+    
+    [fork]
+    # 本家のリモートリポジトリを登録
+    git remote add github https://github.com/sorin-ionescu/prezto.git
+    # 本家の更新をローカルに反映
+    git pull --rebase github master
 
 Usage
 -----
