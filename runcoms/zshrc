@@ -5,9 +5,38 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# zshrc compile
+[ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ] && {
+    zcompile ~/.zshrc
+}
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+
+#
+##
+###  Customize to your needs...
+
+# LANG
+export LANG=ja_JP.UTF-8
+export LESSCHARSET=utf-8
+export TERM_LANG=UTF-8
+
+[ $ITERM_PROFILE ] && [ $ITERM_PROFILE = "EUC-JP" ] && {
+    TERM_LANG=EUC
+    export LANG=ja_JP.eucJP
+}
+
+
+# PATH
+[[ -s ~/.sh/env.sh ]] && source ~/.sh/env.sh
+[[ -s ~/.sh/env_zsh.sh ]] && source ~/.sh/env_zsh.sh
+
+# FUNCTION
+[[ -s ~/.sh/functions.sh ]] && source ~/.sh/functions.sh
+
+# ALIAS
+[[ -s ~/.sh/common_alias.sh ]] && source ~/.sh/common_alias.sh
