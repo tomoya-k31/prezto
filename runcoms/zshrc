@@ -32,11 +32,5 @@ export TERM_LANG=UTF-8
 
 
 # PATH
-[[ -s ~/.sh/env.sh ]] && source ~/.sh/env.sh
-[[ -s ~/.sh/env_zsh.sh ]] && source ~/.sh/env_zsh.sh
-
-# FUNCTION
-[[ -s ~/.sh/functions.sh ]] && source ~/.sh/functions.sh
-
-# ALIAS
-[[ -s ~/.sh/common_alias.sh ]] && source ~/.sh/common_alias.sh
+[[ -e ~/.sh/zsh/ ]] && for f (~/.sh/zsh/*) source "${f}"
+[[ -e ~/.sh/common/ ]] && for f (~/.sh/common/*) source "${f}"
