@@ -32,5 +32,6 @@ export TERM_LANG=UTF-8
 
 
 # PATH
-[[ -e ~/.sh/zsh/ ]] && for f (~/.sh/zsh/*) source "${f}"
-[[ -e ~/.sh/common/ ]] && for f (~/.sh/common/*) source "${f}"
+[[ -e ~/.dotfiles/sh/zsh/ ]] && for f (~/.dotfiles/sh/zsh/*) source "${f}"
+[[ -e ~/.dotfiles/sh/common/ ]] && for f (~/.dotfiles/sh/common/*) source "${f}"
+
